@@ -1,0 +1,15 @@
+<!-- redirect.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecionando...</title>
+  <script>
+    const query = window.location.search;
+    window.location.href = "meli://auth" + query;
+  </script>
+</head>
+<body>
+  Redirecionando para o aplicativo...
+</body>
+</html>
