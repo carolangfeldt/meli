@@ -1,15 +1,18 @@
-<!-- redirect.html -->
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Redirecionando...</title>
-  <script>
-    const query = window.location.search;
-    window.location.href = "meli://auth" + query;
-  </script>
-</head>
-<body>
-  Redirecionando para o aplicativo...
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Redirecionando...</title>
+    <script>
+      const code = new URLSearchParams(window.location.search).get("code");
+      if (code) {
+        window.location.href = `meli://auth?code=${code}`;
+      } else {
+        document.write("Erro: nenhum código encontrado.");
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecionando para o app...</p>
+  </body>
 </html>
