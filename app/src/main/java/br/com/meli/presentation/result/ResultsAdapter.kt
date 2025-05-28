@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.meli.databinding.ItemProductBinding
 import br.com.meli.domain.model.Product
 import com.bumptech.glide.Glide
+import ensureHttps
+import formatAsCurrency
 
 class ResultsAdapter(
     private val list: List<Product>,
@@ -16,8 +18,10 @@ class ResultsAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
             binding.txtTitle.text = product.title
-            binding.txtPrice.text = "R$ %.2f".format(product.price)
-            Glide.with(binding.imgThumbnail.context).load(product.thumbnail).into(binding.imgThumbnail)
+            binding.txtPrice.text = product.price.formatAsCurrency()
+            Glide.with(binding.imgThumbnail.context)
+                .load(product.thumbnail.ensureHttps())
+                .into(binding.imgThumbnail)
         }
     }
 

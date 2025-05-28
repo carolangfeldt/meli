@@ -37,6 +37,29 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
+    }
+
+    flavorDimensions += "mode"
+    productFlavors {
+        create("mock") {
+            dimension = "mode"
+            applicationIdSuffix = ".mock"
+            versionNameSuffix = "-mock"
+            buildConfigField("Boolean", "IS_MOCK", "true")
+        }
+        create("prod") {
+            dimension = "mode"
+            applicationIdSuffix = ".prod"
+            versionNameSuffix = "-prod"
+            buildConfigField("Boolean", "IS_MOCK", "false")
+        }
+    }
+
+    sourceSets {
+        getByName("mock") {
+            assets.srcDir("src/mock/assets")
+        }
     }
 }
 
@@ -59,6 +82,13 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.gson)
     implementation(libs.glide)
+
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.logging.interceptor)
+    implementation(libs.androidx.animation.core.android)
+    implementation(libs.androidx.motionlayout)
+    implementation(libs.com.tbuonomo)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

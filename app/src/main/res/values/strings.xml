@@ -2,4 +2,8 @@
     <string name="app_name">Meli</string>
     <string name="btSearch">BUSCAR</string>
     <string name="txt_search_hint">Buscar no Mercado Livre</string>
+    <string name="label_description">Descrição</string>
+    <string name="label_price">Preço</string>
+    <string name="btn_search">Buscar</string>
+    <string name="hint_btn_text">O que deseja buscar?</string>
 </resources>
