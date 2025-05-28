@@ -27,10 +27,12 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = "17"
     }
@@ -87,10 +89,12 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.logging.interceptor)
     implementation(libs.androidx.animation.core.android)
-    implementation(libs.androidx.motionlayout)
     implementation(libs.com.tbuonomo)
 
     testImplementation(libs.junit)
+    testImplementation(libs.turbine)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.fragment.testing)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

@@ -19,8 +19,10 @@ glide = "4.16.0"
 koin = "3.5.3"
 logginginterceptor = "4.12.0"
 animationCoreAndroid = "1.8.2"
-motionLayout = "2.1.0-beta02"
 dotsindicator = "4.3"
+fragmenttesting = "1.8.7"
+coroutines = "1.7.3"
+turbine = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -48,9 +50,11 @@ logging-interceptor = {group = "com.squareup.okhttp3", name = "logging-intercept
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 androidx-animation-core-android = { group = "androidx.compose.animation", name = "animation-core-android", version.ref = "animationCoreAndroid" }
-androidx-motionlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "motionLayout" }
 com-tbuonomo = { group = "com.tbuonomo", name = "dotsindicator", version.ref = "dotsindicator" }
 
+fragment-testing= { group = "androidx.fragment", name = "fragment-testing", version.ref = "fragmenttesting" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
