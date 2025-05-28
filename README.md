@@ -1,82 +1,86 @@
-MeliApp - Aplicativo de Busca de Produtos do Mercado Livre
+# 🛒 MeliApp - Aplicativo de Busca de Produtos do Mercado Livre
 
-Este é um aplicativo Android desenvolvido em Kotlin utilizando Jetpack Compose e arquitetura MVVM + Clean Architecture, que permite ao usuário buscar produtos no Mercado Livre, visualizar detalhes e imagens, e navegar de forma fluida com suporte a rotação de tela e tratamento de erros.
+Aplicativo Android desenvolvido em **Kotlin** com **arquitetura MVVM + Clean Architecture**, que permite ao usuário buscar produtos no Mercado Livre, visualizar resultados e detalhes com imagens, descrição expansível e muito mais.
 
-⸻
+---
 
-:rocket: Funcionalidades
-	•	Tela de Busca de produtos
-	•	Tela de Resultados com lista de produtos encontrados
-	•	Tela de Detalhes com:
-	•	Carousel de imagens com indicador (ViewPager2 + WormDotsIndicator)
-	•	Preço formatado com moeda brasileira
-	•	Categoria
-	•	Descrição expansível (“Ver mais” / “Ver menos”)
-	•	Splash screen personalizada com logo do Mercado Livre
-	•	Integração com API do Mercado Livre (mockado/local ou futura integração via OAuth2.0)
-	•	Navegação com Navigation Component
-	•	Suporte à rotação de tela
-	•	Tratamento de erros de busca e exibição de mensagens amigáveis
+## 🚀 Funcionalidades
 
-⸻
+- 🔍 Tela de **Busca** de produtos  
+- 📋 Tela de **Resultados** com:
+  - Imagem do produto
+  - Título e preço formatado (R$)
+  - Divider entre itens
+  - Ícone com setinha (chevron) para indicar navegabilidade  
+- 📄 Tela de **Detalhes** com:
+  - **Carousel de imagens** (ViewPager2 + WormDotsIndicator)
+  - Preço formatado com moeda brasileira
+  - Categoria do produto
+  - **Descrição expansível** com botão “Ver mais” / “Ver menos”
+- 🟡 **Splash screen personalizada** com logo do Mercado Livre
+- 🔄 **Navegação** entre telas com Navigation Component
+- 🧭 Suporte completo à **rotação de tela**
+- 🛑 Tratamento de **erros de busca** e mensagens amigáveis
 
-:hammer: Tecnologias Utilizadas
-	•	Kotlin (100%)
-	•	Jetpack Compose para UI (se aplicável)
-	•	XML Layouts (MotionLayout, ViewPager2)
-	•	Navigation Component
-	•	ViewModel + StateFlow
-	•	Koin para injeção de dependência
-	•	ViewBinding
-	•	Coroutines + Flow
-	•	Material Design 3
+---
 
-⸻
+## 🔨 Tecnologias Utilizadas
 
-:iphone: Telas do App
-	•	SplashScreen com logo
-	•	Tela de Busca com EditText + Botão
-	•	Lista de resultados com:
-	•	Imagem (ImageView)
-	•	Título e preço
-	•	Divider entre itens
-	•	Ícone chevron indicando navegabilidade
-	•	Tela de Detalhes:
-	•	Carousel de imagens com animação
-	•	Título, Preço, Categoria
-	•	Texto expansível com “Ver mais” / “Ver menos”
+- ✅ **Kotlin** 100%
+- ✅ **ViewModel + StateFlow**
+- ✅ **Koin** (injeção de dependência)
+- ✅ **Coroutines + Flow**
+- ✅ **ViewBinding**
+- ✅ **MotionLayout** e **ViewPager2**
+- ✅ **WormDotsIndicator**
+- ✅ **Material Design 3**
+- ✅ **Extensões (Extensions.kt)** para formatação de preço, links HTTPS e texto expansível
 
-⸻
+---
 
-:lock: Gerenciamento de Sessão
-	•	SessionManager com SharedPreferences
-	•	Confirmação de logout com AlertDialog
-	•	Redirecionamento para Login se aplicável
+## 🧪 Testes
 
-⸻
+- ✅ Testes **unitários** com `kotlinx-coroutines-test` e `Turbine`
+- ✅ Testes **instrumentados (UI)** com `FragmentScenario`, `Espresso` e `KoinTestRule`
 
-:floppy_disk: Estrutura de Diretórios
+### Exemplos:
+- `SearchViewModelTest`: valida mudanças de estado com queries
+- `SearchFragmentTest`: valida interações de UI (digitação, clique e navegação)
 
-com.meli
-├── di/                 <- Módulos do Koin
-├── data/              <- Camada de dados e mocks
-├── domain/            <- Camada de usecases e models
-├── presentation/
-│   ├── search/        <- Tela de busca
-│   ├── results/       <- Tela de resultados
-│   ├── detail/        <- Tela de detalhes
-│   └── components/    <- Adapters e componentes visuais reutilizáveis
-├── util/              <- Extensões, helpers e formatações
-├── MainActivity.kt
+---
 
+## 📱 Telas do App
 
-⸻
+- 🟡 SplashScreen com logo
+- 🔍 Tela de Busca (campo de texto e botão)
+- 📋 Lista de resultados
+- 📄 Detalhes com:
+  - Carousel animado
+  - Indicador de página
+  - Título, preço, categoria
+  - Texto expansível
 
-:bookmark: Requisitos
-	•	Android Studio Giraffe ou superior
-	•	Android SDK 31+
-	•	Gradle 8.2+
+---
 
-⸻
+## 🔒 Gerenciamento de Sessão
 
-Feito para fins de aprendizado e demonstração de habilidades Android.
+- SessionManager com `SharedPreferences`
+- Confirmação de logout com `AlertDialog`
+- Redirecionamento automático para a tela de Login (modo `!IS_MOCK`)
+
+---
+
+## 🛠 Requisitos
+
+- Android Studio **Giraffe** ou superior  
+- SDK mínimo: **26+**  
+- Gradle: **8.2+**  
+- Kotlin: **1.9+**
+
+---
+
+## 🎯 Observações
+
+> O app está preparado para receber autenticação OAuth 2.0 futuramente e já possui estrutura de `SessionManager` e `BuildConfig.IS_MOCK`.
+
+---
