@@ -1,9 +1,11 @@
+import android.graphics.Color
 import android.graphics.Typeface
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
+import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.view.View
 import android.widget.TextView
@@ -19,7 +21,11 @@ fun String.ensureHttps(): String {
     return this.replace("http://", "https://")
 }
 
-fun TextView.setExpandableText(fullText: String, maxCharsCollapsed: Int = 150) {
+fun TextView.setExpandableText(
+    fullText: String,
+    maxCharsCollapsed: Int = 150,
+    color: Int = Color.BLUE
+) {
     var isExpanded = false
     movementMethod = LinkMovementMethod.getInstance()
 
@@ -47,6 +53,12 @@ fun TextView.setExpandableText(fullText: String, maxCharsCollapsed: Int = 150) {
                 start + "Ver menos".length,
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
             )
+            spannable.setSpan(
+                ForegroundColorSpan(color),
+                start,
+                start + "Ver menos".length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
 
             text = spannable
 
@@ -70,6 +82,12 @@ fun TextView.setExpandableText(fullText: String, maxCharsCollapsed: Int = 150) {
 
             spannable.setSpan(
                 StyleSpan(Typeface.BOLD_ITALIC),
+                start,
+                start + "Ver mais".length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            spannable.setSpan(
+                ForegroundColorSpan(color),
                 start,
                 start + "Ver mais".length,
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE

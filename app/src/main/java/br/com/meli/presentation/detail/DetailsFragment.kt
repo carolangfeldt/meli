@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
+import br.com.meli.R
 import br.com.meli.databinding.FragmentDetailsBinding
 import br.com.meli.util.animation.ZoomOutPageTransformer
 import formatAsCurrency
